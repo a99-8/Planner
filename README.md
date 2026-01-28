@@ -1,36 +1,60 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Planner : Project Overview
 
-## Getting Started
+An interactive web application (hosted on GitHub Pages) designed for analyzing land data, performing comparative studies, and managing financial adjustments.
+1. Data Ingestion (Land Data)
 
-First, run the development server:
+This module handles the initial data entry and preview.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+    Interface: A user-friendly upload zone for CSV files.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+    Input Data: Files containing land attributes (e.g., Plot Number, Street Width, Number of Streets, etc.).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+    Output: An interactive table titled "Uploaded Data Table" that displays the raw content of the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+2. Comparison Configuration
 
-## Learn More
+A dynamic system to manage and define comparison variables.
 
-To learn more about Next.js, take a look at the following resources:
+    Differences Selection Table: Lists all columns from the uploaded CSV. Selecting a column automatically adds it to the Comparison Table.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+    Comparison Table: Consists of:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+        Static Columns: (Comparison Date, Comparison Type).
 
-## Deploy on Vercel
+        Dynamic Columns: Generated on-the-fly based on selections from the "Differences Selection Table."
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+3. Adjustments Matrix
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This section acts as the bridge between raw data and final evaluation.
+
+    Function: Generates dynamic tables based on the "Differences" selected in the previous step.
+
+    Structure:
+
+        Rows: Unique values extracted from the Land Data Table.
+
+        Columns: Unique values extracted from the Comparison Table.
+
+    Objective: To input adjustment values into the matrix and push them to the final evaluation stage.
+
+4. Evaluation & Analytics (Final Assessment)
+
+The core engine for calculating final results.
+
+    Function: Performs final mathematical operations based on data from all previous sections.
+
+    Calculated Columns:
+
+        Total Adjustments: Summation of all adjustment variables.
+
+        Weighted Average: Calculation of the final weighted score.
+
+        Final Results: Clear visualization of the property's final evaluation.
+
+Tech Stack (Recommended)
+
+    Frontend: HTML5, CSS3, JavaScript (ES6+).
+
+    Hosting: GitHub Pages.
+
+    CSV Parsing: PapaParse (Recommended for browser-side CSV handling).
